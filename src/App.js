@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes,Link,Route,Navigate } from 'react-router-dom';
+import {Routes,Route,Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavScrollExample from './components/NavBar2';
