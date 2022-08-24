@@ -21,7 +21,7 @@ export default function AddFriend(){
 
 try{
 
-   Axios.post('http://localhost:5000/addfriend',
+   Axios.post('https://add-firends.herokuapp.com/addfriend',
    {name:name,age:age,description:description}).then(()=>{
     alert("Save Firend");
     ShowAll();
@@ -38,7 +38,7 @@ try{
   };
 
   useEffect(()=>{
-    Axios.get('http://localhost:5000/read')
+    Axios.get('https://add-firends.herokuapp.com/read')
     .then((response)=>{
       setListOffriends(response.data)
       
@@ -48,7 +48,7 @@ try{
   },[]);
 
   const ShowAll = ()=>{
-    Axios.get('http://localhost:5000/read')
+    Axios.get('https://add-firends.herokuapp.com/read')
     .then((response)=>{
       setListOffriends(response.data)
     }).catch(()=>{
@@ -59,7 +59,7 @@ try{
   const updateFriend = (id)=>{
     const newAge = prompt("Enter New Age: ");
     
-    Axios.put('http://localhost:5000/update', {newAge: newAge,id:id}).then(()=>{
+    Axios.put('https://add-firends.herokuapp.com/update', {newAge: newAge,id:id}).then(()=>{
 
       
      ShowAll();
@@ -81,7 +81,7 @@ try{
             <button onClick={onClose}>No</button>
             <button
               onClick={() => {
-                Axios.delete(`http://localhost:5000/delete/${id}`).then(()=>{
+                Axios.delete(`https://add-firends.herokuapp.com/delete/${id}`).then(()=>{
                 
                 ShowAll();
                 onClose();
